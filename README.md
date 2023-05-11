@@ -82,3 +82,27 @@
     ThetaResponse<GetPendingTransactionsResult> response = ThetaRPCService.request("http://localhost:16888/rpc", request);
     System.out.println(response.toString());
 ```
+#### 7. BroadcastRawTransaction
+``` 
+    ThetaRequest<BroadcastRawTransactionParam> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("theta.BroadcastRawTransaction");
+    request.setId(1);
+    BroadcastRawTransactionParam param = new BroadcastRawTransactionParam();
+    param.setTxBytes("02f8a4c78085e8d4a51000f86ff86d942e833968e5bb786ae419c4d13189fb081cc43babd3888ac7230489e800008901158e46f1e875100015b841c2daae6cab92e37308763664fcbe93d90219df5a3520853a9713e70e734b11f27a43db6b77da4f885213b45a294c2b4c74dc9a018d35ba93e5b9297876a293c700eae9949f1233798e905e173560071255140b4a8abd3ec6d3888ac7230489e800008901158e460913d00000");
+    request.setParams(Collections.singletonList(param));
+    ThetaResponse<BroadcastRawTransactionResult> response = ThetaRPCService.request("http://localhost:16888/rpc", request);
+    System.out.println(response.toString());
+```
+#### 8. BroadcastRawTransactionAsync
+``` 
+    ThetaRequest<BroadcastRawTransactionAsyncParam> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("theta.BroadcastRawTransactionAsync");
+    request.setId(1);
+    BroadcastRawTransactionAsyncParam param = new BroadcastRawTransactionAsyncParam();
+    param.setTxBytes("02f8a4c78085e8d4a51000f86ff86d942e833968e5bb786ae419c4d13189fb081cc43babd3888ac7230489e800008901158e46f1e875100016b841393e2eba6241482098cf11ef4dd869209d7ebd716397f3c862ca5b762bbf403006b1fa009786102383c408cabdf7450c1c73d4dd4a20d3b48a39a88ffe0ecb0e01eae9949f1233798e905e173560071255140b4a8abd3ec6d3888ac7230489e800008901158e460913d00000");
+    request.setParams(Collections.singletonList(param));
+    ThetaResponse<BroadcastRawTransactionAsyncResult> response = ThetaRPCService.request("http://localhost:16888/rpc", request);
+    System.out.println(response.toString());
+```
