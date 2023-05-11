@@ -1,4 +1,4 @@
-package io.github.devgoks.Theta_RPC_API_Java_SDK.ApiModels.GetBlock;
+package io.github.devgoks.Theta_RPC_API_Java_SDK.ApiModels.GetBlockByHeight;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,7 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetBlockResult {
+public class GetBlockByHeightResult {
     @JsonProperty("chain_id")
     private String chainId;
 

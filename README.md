@@ -43,3 +43,28 @@
     ThetaResponse<GetBlockResult> response = ThetaRPCService.request("http://localhost:16888/rpc", request);
     System.out.println(response.toString());
 ```
+#### 4. GetBlockByHeight
+``` 
+    ThetaRequest<GetBlockByHeightParam> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("theta.GetBlockByHeight");
+    request.setId(1);
+    GetBlockByHeightParam param = new GetBlockByHeightParam();
+    param.setHeight("3");
+    param.setIncludeEthTxHashes(false);
+    request.setParams(Collections.singletonList(param));
+    ThetaResponse<GetBlockByHeightResult> response = ThetaRPCService.request("http://localhost:16888/rpc", request);
+    System.out.println(response.toString());
+```
+#### 5. GetTransaction
+``` 
+    ThetaRequest<GetTransactionParam> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("theta.GetTransaction");
+    request.setId(1);
+    GetTransactionParam param = new GetTransactionParam();
+    param.setHash("0xf3cc94af7a1520b384999ad106ade9738b6cde66e2377ceab37067329d7173a0");
+    request.setParams(Collections.singletonList(param));
+    ThetaResponse<GetTransactionResult> response = ThetaRPCService.request("http://localhost:16888/rpc", request);
+    System.out.println(response.toString());
+```

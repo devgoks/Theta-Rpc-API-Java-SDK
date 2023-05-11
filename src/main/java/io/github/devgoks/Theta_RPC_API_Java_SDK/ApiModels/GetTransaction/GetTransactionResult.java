@@ -1,4 +1,4 @@
-package io.github.devgoks.Theta_RPC_API_Java_SDK.ApiModels.GetBlock;
+package io.github.devgoks.Theta_RPC_API_Java_SDK.ApiModels.GetTransaction;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -11,42 +11,21 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetBlockResult {
-    @JsonProperty("chain_id")
-    private String chainId;
+public class GetTransactionResult {
+    @JsonProperty("block_hash")
+    private String blockHash;
 
-    @JsonProperty("epoch")
-    private String epoch;
-
-    @JsonProperty("height")
-    private String height;
-
-    @JsonProperty("parent")
-    private String parent;
-
-    @JsonProperty("transactions_hash")
-    private String transactionsHash;
-
-    @JsonProperty("state_hash")
-    private String stateHash;
-
-    @JsonProperty("timestamp")
-    private String timestamp;
-
-    @JsonProperty("proposer")
-    private String proposer;
-
-    @JsonProperty("children")
-    private List<String> children;
+    @JsonProperty("block_height")
+    private String blockHeight;
 
     @JsonProperty("status")
-    private int status;
+    private String status;
 
     @JsonProperty("hash")
     private String hash;
 
-    @JsonProperty("transactions")
-    private List<Transaction> transactions;
+    @JsonProperty("transaction")
+    private Transaction transaction;
 
     @Data
     public static class Transaction {
