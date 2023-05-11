@@ -14,7 +14,11 @@
 ### Sample usage in your codebase:
 #### 1. GetVersion
 ``` 
-    ThetaRequest<Object> request = new ThetaRequest<>("2.0","theta.GetVersion",Collections.emptyList(),1);
+    ThetaRequest<Object> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("theta.GetVersion");
+    request.setId(1);
+    request.setParams(Collections.emptyList());
     ThetaResponse<GetVersionResult> response = ThetaRPCService.request("http://localhost:16888/rpc", request);
     System.out.println(response.toString());
 ```
@@ -66,5 +70,15 @@
     param.setHash("0xf3cc94af7a1520b384999ad106ade9738b6cde66e2377ceab37067329d7173a0");
     request.setParams(Collections.singletonList(param));
     ThetaResponse<GetTransactionResult> response = ThetaRPCService.request("http://localhost:16888/rpc", request);
+    System.out.println(response.toString());
+```
+#### 6. GetPendingTransactions
+``` 
+    ThetaRequest<Object> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("theta.GetPendingTransactions");
+    request.setId(1);
+    request.setParams(Collections.emptyList());
+    ThetaResponse<GetPendingTransactionsResult> response = ThetaRPCService.request("http://localhost:16888/rpc", request);
     System.out.println(response.toString());
 ```
