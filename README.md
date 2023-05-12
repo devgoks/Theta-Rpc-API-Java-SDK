@@ -140,3 +140,41 @@
             new ParameterizedTypeReference<ThetaResponse<NewKeyResult>>(){});
     System.out.println(response.toString());
 ```
+#### 11. ListKeys
+``` 
+    ThetaRequest<Object> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("thetacli.ListKeys");
+    request.setId(1);
+    request.setParams(Collections.emptyList());
+    ThetaResponse<ListKeysResult> response = ThetaRPCService.request("http://localhost:16889/rpc", request,
+            new ParameterizedTypeReference<ThetaResponse<ListKeysResult>>(){});
+    System.out.println(response.toString());
+```
+#### 12. UnlockKey
+``` 
+    ThetaRequest<UnlockKeyParam> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("thetacli.UnlockKey");
+    request.setId(1);
+    UnlockKeyParam param = new UnlockKeyParam();
+    param.setAddress("0x2E833968E5bB786Ae419c4d13189fB081Cc43bab");
+    param.setPassword("qwertyuiop");
+    request.setParams(Collections.singletonList(param));
+    ThetaResponse<UnlockKeyResult> response = ThetaRPCService.request("http://localhost:16889/rpc", request,
+            new ParameterizedTypeReference<ThetaResponse<UnlockKeyResult>>(){});
+    System.out.println(response.toString());
+```
+#### 13. LockKey
+``` 
+    ThetaRequest<LockKeyParam> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("thetacli.LockKey");
+    request.setId(1);
+    LockKeyParam param = new LockKeyParam();
+    param.setAddress("0x2E833968E5bB786Ae419c4d13189fB081Cc43bab");
+    request.setParams(Collections.singletonList(param));
+    ThetaResponse<LockKeyResult> response = ThetaRPCService.request("http://localhost:16889/rpc", request,
+            new ParameterizedTypeReference<ThetaResponse<LockKeyResult>>(){});
+    System.out.println(response.toString());
+```

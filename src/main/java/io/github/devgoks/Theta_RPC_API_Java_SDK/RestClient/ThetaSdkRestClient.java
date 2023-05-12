@@ -2,9 +2,8 @@ package io.github.devgoks.Theta_RPC_API_Java_SDK.RestClient;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
-import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-@Component
+
 public class ThetaSdkRestClient {
     private static final RestTemplate restTemplate = new RestTemplate();
 
