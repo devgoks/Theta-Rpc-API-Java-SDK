@@ -178,3 +178,36 @@
             new ParameterizedTypeReference<ThetaResponse<LockKeyResult>>(){});
     System.out.println(response.toString());
 ```
+#### 14. IsKeyUnlocked
+``` 
+    ThetaRequest<IsKeyUnlockedParam> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("thetacli.IsKeyUnlocked");
+    request.setId(1);
+    IsKeyUnlockedParam param = new IsKeyUnlockedParam();
+    param.setAddress("0x2E833968E5bB786Ae419c4d13189fB081Cc43bab");
+    request.setParams(Collections.singletonList(param));
+    ThetaResponse<IsKeyUnlockedResult> response = ThetaRPCService.request("http://localhost:16889/rpc", request,
+            new ParameterizedTypeReference<ThetaResponse<IsKeyUnlockedResult>>(){});
+    System.out.println(response.toString());
+```
+#### 15. Send (Tx APIs)
+``` 
+    ThetaRequest<SendParam> request = new ThetaRequest<>();
+    request.setJsonRpc("2.0");
+    request.setMethod("thetacli.Send");
+    request.setId(1);
+    SendParam param = new SendParam();
+    param.setChainId("privatenet");
+    param.setFrom("0x2E833968E5bB786Ae419c4d13189fB081Cc43bab");
+    param.setTo("0xA47B89c94a50C32CEACE9cF64340C4Dce6E5EcC6");
+    param.setThetaWei("99000000000000000000");
+    param.setTFuelWei("88000000000000000000");
+    param.setFee("1000000000000");
+    param.setSequence("6");
+    param.setAsync(true);
+    request.setParams(Collections.singletonList(param));
+    ThetaResponse<SendResult> response = ThetaRPCService.request("http://localhost:16889/rpc", request,
+            new ParameterizedTypeReference<ThetaResponse<SendResult>>(){});
+    System.out.println(response.toString());
+```
