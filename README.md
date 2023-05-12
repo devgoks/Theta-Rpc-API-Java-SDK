@@ -6,7 +6,7 @@
 ```
         <dependency>
             <groupId>io.github.devgoks</groupId>
-            <artifactId>Theta_RPC_API_Java_SDK</artifactId>
+            <artifactId>theta-rpc-api-java-sdk</artifactId>
             <version>1.0.0</version>
         </dependency>
 ```
