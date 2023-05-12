@@ -11,7 +11,7 @@
 	<groupId>io.github.devgoks</groupId>
 	<artifactId>theta-rpc-api-java-sdk</artifactId>
 	<version>1.0.0</version>
-	<name>Theta_RPC_API_Java_SDK</name>
+	<name>theta-rpc-api-java-sdk</name>
 	<description>Theta RPC API Java SDK</description>
 	<licenses>
 		<license>
